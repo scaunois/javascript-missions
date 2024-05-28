@@ -3,32 +3,95 @@
 
 <div class="row">
 	<div class="col-12">
-		<form>
+		<form [formGroup]="levelForm" (ngSubmit)="validateAnswers()">
 
 			<!-- Question 1 -->
-			<div class="row">
+			<div class="row mb-3">
 				<div class="col">
-					<div>Question 1 : quelle syntaxe permet de créer une variable modifiable contenant la valeur "Coucou !" ?</div>
+					<div class="mb-3">Question 1 : quelle syntaxe permet de créer une variable modifiable contenant la valeur "Coucou !" ?</div>
 					<div class="form-check">
-						<input type="radio" class="form-check-input" name="q1" id="q1_opt1"/>
+						<input type="radio" class="form-check-input" name="q1" id="q1_opt1" value="1" formControlName="q1"/>
 						<label for="q1_opt1" class="form-check-label">
 							<pre><code highlight="message = &quot;Coucou !&quot;;"></code></pre>
 						</label>
 					</div>
 					<div class="form-check">
-						<input type="radio" class="form-check-input" name="q1" id="q1_opt2"/>
+						<input type="radio" class="form-check-input" name="q1" id="q1_opt2" value="2" formControlName="q1"/>
 						<label for="q1_opt2" class="form-check-label">
 							<pre><code highlight="const message = &quot;Coucou !&quot;;" [languages]="['javascript']"></code></pre>
 						</label>
 					</div>
 					<div class="form-check">
-						<input type="radio" class="form-check-input" name="q1" id="q1_opt3"/>
+						<input type="radio" class="form-check-input" name="q1" id="q1_opt3" value="3" formControlName="q1"/>
 						<label for="q1_opt3" class="form-check-label">
 							<pre><code highlight="let message = &quot;Coucou !&quot;;" [languages]="['javascript']"></code></pre>
 						</label>
 					</div>
 				</div>
 			</div>
+
+			<!-- Question 2 -->
+			<div class="row mb-3">
+				<div class="col">
+					<div class="mb-3">Question 2 : quelle sera la valeur de <code>x</code> après les instructions suivantes ?</div>
+					<div><pre><code highlight="let x = 1;
+let y = 2;
+x = x + y;" [languages]="['javascript']"></code></pre></div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q2" id="q2_opt1" value="1" formControlName="q2"/>
+						<label for="q2_opt1" class="form-check-label">1</label>
+					</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q2" id="q2_opt2" value="2" formControlName="q2"/>
+						<label for="q2_opt2" class="form-check-label">2</label>
+					</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q2" id="q2_opt3" value="3" formControlName="q2"/>
+						<label for="q2_opt3" class="form-check-label">3</label>
+					</div>
+				</div>
+			</div>
+
+			<!-- Question 3 -->
+			<div class="row mb-3">
+				<div class="col">
+					<div class="mb-3">Question 3 : quelles sont les valeurs possibles pour une variable de type booléen ?</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q3" id="q3_opt1" value="1" formControlName="q3"/>
+						<label for="q3_opt1" class="form-check-label"><code>true</code> ou <code>false</code></label>
+					</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q3" id="q3_opt2" value="2" formControlName="q3"/>
+						<label for="q3_opt2" class="form-check-label"><code>"true"</code> ou <code>"false"</code></label>
+					</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q3" id="q3_opt3" value="3" formControlName="q3"/>
+						<label for="q3_opt3" class="form-check-label"><code>0</code> ou <code>1</code></label>
+					</div>
+				</div>
+			</div>
+
+			<!-- Question 4 -->
+			<div class="row mb-3">
+				<div class="col">
+					<div class="mb-3">Question 4 : à quoi sert l'instruction suivante ?</div>
+					<div><pre><code highlight="console.log(hello);" [languages]="['javascript']"></code></pre></div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q4" id="q4_opt1" value="1" formControlName="q4"/>
+						<label for="q4_opt1" class="form-check-label">Afficher "hello" à l'écran</label>
+					</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q4" id="q4_opt2" value="2" formControlName="q4"/>
+						<label for="q4_opt2" class="form-check-label">Afficher la valeur de la variable <code>hello</code> à l'écran</label>
+					</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q4" id="q4_opt3" value="3" formControlName="q4"/>
+						<label for="q4_opt3" class="form-check-label">Afficher la valeur de la variable <code>hello</code> dans la console du navigateur</label>
+					</div>
+				</div>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Submit</button>
 
 		</form>
 	</div>

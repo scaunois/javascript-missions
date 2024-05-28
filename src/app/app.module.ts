@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
@@ -22,6 +23,7 @@ import { Level1Component } from './levels/level1/level1.component';
 		// main modules
 		AppRoutingModule,
 		BrowserModule,
+		ReactiveFormsModule,
 		RouterOutlet,
 		RouterLink,
 		RouterLinkActive,
