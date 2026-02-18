@@ -1,1 +1,109 @@
-<p>level3 works!</p>
+
+<h1>Niveau 3</h1>
+
+<div class="row">
+	<div class="col-12">
+		<form [formGroup]="levelForm" (ngSubmit)="validateAnswers()">
+
+			<!-- Question 1 -->
+			<div class="row mb-3">
+				<div class="col">
+					<div class="mb-3">Question 1 : que va afficher le code suivant dans la console ?</div>
+					<div><pre><code highlight="const heroes = ['batman', 'spiderman', 'superman', 'wolverine'];
+
+for (let i = 1; i < heroes.length; i++) {
+    const hero = heroes[i];
+    if (!hero.startsWith('w')) {
+        console.log(hero);
+    }
+}" [languages]="['javascript']"></code></pre></div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q1" id="q1_opt1" value="1" formControlName="q1"/>
+						<label for="q1_opt1" class="form-check-label">batman, spiderman, superman,</label>
+					</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q1" id="q1_opt2" value="2" formControlName="q1"/>
+						<label for="q1_opt2" class="form-check-label">batman, spiderman, superman, wolverine,</label>
+					</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q1" id="q1_opt3" value="3" formControlName="q1"/>
+						<label for="q1_opt3" class="form-check-label">spiderman, superman,</label>
+					</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q1" id="q1_opt4" value="4" formControlName="q1"/>
+						<label for="q1_opt4" class="form-check-label">wolverine,</label>
+					</div>
+				</div>
+			</div>
+
+			<!-- Question 2 -->
+			<div class="row mb-3">
+				<div class="col">
+					<div class="mb-3">Question 2 : considérer le code suivant.</div>
+					<div><pre><code highlight="let x = 32;
+let y = 0;
+
+while (x > 4) {
+    x = x / 2;
+    y++;
+}" [languages]="['javascript']"></code></pre></div>
+					<div class="mb-3">Que vaut <code>y</code> après exécution de ce code ?</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q2" id="q2_opt1" value="1" formControlName="q2"/>
+						<label for="q2_opt1" class="form-check-label">2</label>
+					</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q2" id="q2_opt2" value="2" formControlName="q2"/>
+						<label for="q2_opt2" class="form-check-label">3</label>
+					</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q2" id="q2_opt3" value="3" formControlName="q2"/>
+						<label for="q2_opt3" class="form-check-label">4</label>
+					</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q2" id="q2_opt4" value="4" formControlName="q2"/>
+						<label for="q2_opt4" class="form-check-label">32</label>
+					</div>
+				</div>
+			</div>
+
+			<!-- Question 3 -->
+			<div class="row mb-3">
+				<div class="col">
+					<div class="mb-3">
+						Question 3 : quelle est la bonne syntaxe pour appeler la fonction <code>doSomething()</code>
+						sur chaque élément du tableau <code>anArray</code> ?
+					</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q3" id="q3_opt1" value="1" formControlName="q3"/>
+						<label for="q3_opt1" class="form-check-label">
+							<div><pre><code highlight="anArray.forEach(element => {
+    doSomething(element);
+});" [languages]="['javascript']"></code></pre></div>
+						</label>
+					</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q3" id="q3_opt2" value="2" formControlName="q3"/>
+						<label for="q3_opt2" class="form-check-label">
+							<div><pre><code highlight="forEach(const element of anArray) {
+    doSomething(element);
+}
+" [languages]="['javascript']"></code></pre></div>
+						</label>
+					</div>
+					<div class="form-check">
+						<input type="radio" class="form-check-input" name="q3" id="q3_opt3" value="3" formControlName="q3"/>
+						<label for="q3_opt3" class="form-check-label">
+							<div><pre><code highlight="for each (const element of anArray) {
+    doSomething(element);
+}" [languages]="['javascript']"></code></pre></div>
+						</label>
+					</div>
+				</div>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+
+		</form>
+	</div>
+</div>
