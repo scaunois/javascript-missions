@@ -1,10 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Highlight } from 'ngx-highlightjs';
 
 @Component({
-  selector: 'app-level1',
-  templateUrl: './level1.component.html',
-  styleUrls: ['./level1.component.css']
+	selector: 'app-level1',
+	templateUrl: './level1.component.html',
+	styleUrls: ['./level1.component.css'],
+	imports: [
+		ReactiveFormsModule,
+		Highlight,
+	],
+	standalone: true
 })
 export class Level1Component {
 

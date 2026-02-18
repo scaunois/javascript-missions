@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Highlight } from 'ngx-highlightjs';
 
 @Component({
-  selector: 'app-level2',
-  templateUrl: './level2.component.html',
-  styleUrls: ['./level2.component.css']
+	selector: 'app-level2',
+	templateUrl: './level2.component.html',
+	styleUrls: ['./level2.component.css'],
+	imports: [
+		ReactiveFormsModule,
+		Highlight,
+	],
+	standalone: true
 })
 export class Level2Component {
 
