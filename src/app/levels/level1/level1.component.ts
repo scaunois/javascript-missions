@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Highlight } from 'ngx-highlightjs';
 
@@ -10,7 +10,7 @@ import { Highlight } from 'ngx-highlightjs';
 		ReactiveFormsModule,
 		Highlight,
 	],
-	standalone: true
+	standalone: true,
 })
 export class Level1Component {
 
