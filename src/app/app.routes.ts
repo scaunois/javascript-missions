@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { AdminComponent } from './admin/admin.component';
+import { ApplicationInfoComponent } from './admin/application-info/application-info.component';
 import { HomeComponent } from './home/home.component';
 import { Level1Component } from './levels/level1/level1.component';
 import { Level2Component } from './levels/level2/level2.component';
@@ -9,6 +11,12 @@ export const APP_ROUTES: Routes = [
 	{ path: '', redirectTo: 'accueil', pathMatch: 'full' },
 
 	{ path: 'accueil', component: HomeComponent },
+
+	{ path: 'admin', component: AdminComponent, children:
+			[
+				{ path: 'app-info', component: ApplicationInfoComponent },
+			]
+	},
 
 	{
 		path: 'niveaux', children: [
