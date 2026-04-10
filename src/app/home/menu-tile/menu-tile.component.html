@@ -1,0 +1,10 @@
+
+<div class="card w-100">
+	<div class="card-header">
+		{{ menu.title }}
+	</div>
+	<div class="card-body d-flex flex-column justify-content-between">
+		<p class="card-text">{{ menu.description }}</p>
+		<a [routerLink]="menu.url" class="btn btn-primary mx-auto">C'est parti !</a>
+	</div>
+</div>

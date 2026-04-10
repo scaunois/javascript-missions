@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Highlight } from 'ngx-highlightjs';
 
 @Component({
-	selector: 'app-level3',
-	templateUrl: './level3.component.html',
-	styleUrls: ['./level3.component.css'],
+	selector: 'app-level1',
+	templateUrl: './quiz1.component.html',
+	styleUrls: ['./quiz1.component.css'],
 	imports: [
 		ReactiveFormsModule,
-		Highlight
+		Highlight,
 	],
-	standalone: true
+	standalone: true,
 })
-export class Level3Component {
+export class Quiz1Component {
 
 	levelForm: FormGroup;
 
@@ -21,16 +21,19 @@ export class Level3Component {
 			q1: '',
 			q2: '',
 			q3: '',
+			q4: '',
 		});
 	}
 
 	validateAnswers(): void {
 		const fv = this.levelForm.value;
-		const success = fv.q1 === '3' && fv.q2 === '2' && fv.q3 === '1';
+		const success = fv.q1 === "3"
+			&& fv.q2 === "3"
+			&& fv.q3 === "1"
+			&& fv.q4 === "3";
 		if (success)
 			alert("quizz completed!")
 		else
 			alert("try again!")
 	}
-
 }

@@ -3,16 +3,16 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Highlight } from 'ngx-highlightjs';
 
 @Component({
-	selector: 'app-level2',
-	templateUrl: './level2.component.html',
-	styleUrls: ['./level2.component.css'],
+	selector: 'app-level3',
+	templateUrl: './quiz3.component.html',
+	styleUrls: ['./quiz3.component.css'],
 	imports: [
 		ReactiveFormsModule,
-		Highlight,
+		Highlight
 	],
 	standalone: true
 })
-export class Level2Component {
+export class Quiz3Component {
 
 	levelForm: FormGroup;
 
@@ -20,12 +20,13 @@ export class Level2Component {
 		this.levelForm = fb.group({
 			q1: '',
 			q2: '',
+			q3: '',
 		});
 	}
 
 	validateAnswers(): void {
 		const fv = this.levelForm.value;
-		const success = fv.q1 === '2' && fv.q2 === '5'
+		const success = fv.q1 === '3' && fv.q2 === '2' && fv.q3 === '1';
 		if (success)
 			alert("quizz completed!")
 		else
