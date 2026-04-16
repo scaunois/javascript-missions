@@ -1,9 +1,8 @@
-
 @if (authenticatedUser(); as user) {
-	<div>
-		[ <span>{{ user.username }}</span> ]
-		<button type="button" class="btn btn-outline-secondary btn-sm" (click)="logout()">
-			<svg lucideLogOut />
-		</button>
-	</div>
+  <div>
+    [ <span>{{ user.username }}</span> ]
+    <button type="button" class="btn btn-outline-secondary btn-sm" (click)="logout()">
+      <svg lucideLogOut />
+    </button>
+  </div>
 }

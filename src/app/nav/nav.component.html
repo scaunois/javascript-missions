@@ -1,13 +1,12 @@
-
 <nav class="navbar navbar-expand">
-	<div class="navbar-nav align-items-baseline w-100">
-		<a class="nav-item nav-link" routerLink="/accueil" routerLinkActive="active">Accueil</a>
-		<a class="nav-item nav-link" routerLink="/questionnaires" routerLinkActive="active">Questionnaires</a>
-		<a class="nav-item nav-link" routerLink="/exercices" routerLinkActive="active">Exercices</a>
-		<a class="nav-item nav-link" routerLink="/aventure" routerLinkActive="active">Aventure</a>
+  <div class="navbar-nav align-items-baseline w-100">
+    <a class="nav-item nav-link" routerLink="/accueil" routerLinkActive="active">Accueil</a>
+    <a class="nav-item nav-link" routerLink="/questionnaires" routerLinkActive="active">Questionnaires</a>
+    <a class="nav-item nav-link" routerLink="/exercices" routerLinkActive="active">Exercices</a>
+    <a class="nav-item nav-link" routerLink="/aventure" routerLinkActive="active">Aventure</a>
 
-		@if (showConnectionButton()) {
-			<a class="nav-item nav-link ms-auto" routerLink="/admin" routerLinkActive="active">ADMIN</a>
-		}
-	</div>
+    @if (showConnectionButton()) {
+      <a class="nav-item nav-link ms-auto" routerLink="/admin" routerLinkActive="active">ADMIN</a>
+    }
+  </div>
 </nav>

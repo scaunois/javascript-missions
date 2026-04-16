@@ -1,4 +1,3 @@
-
 export interface AppInfo {
-	angularVersion: string;
+  angularVersion: string;
 }
