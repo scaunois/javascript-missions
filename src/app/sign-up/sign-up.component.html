@@ -1,0 +1,25 @@
+<form class="mx-auto shadow"
+			[formGroup]="form"
+			(ngSubmit)="onSubmit()">
+	<div class="mb-3">
+		<label for="username" class="form-label">Nom d'utilisateur</label>
+		<input class="form-control" id="username" formControlName="username" placeholder="Choisissez un nom d'utilisateur"/>
+	</div>
+	<div class="mb-3">
+		<label for="password" class="form-label">Mot de passe</label>
+		<input type="password" class="form-control" id="password" formControlName="password"
+					 placeholder="Définissez votre mot de passe">
+	</div>
+	<div class="mb-3">
+		<button type="submit" class="btn btn-primary d-flex mx-auto" [disabled]="form.invalid">
+			<span>Créer le compte</span>
+		</button>
+	</div>
+	@if (userAlreadyExists()) {
+		<div>
+			<small class="text-danger">
+				Le nom d'utilisateur <strong>{{existingUserUsername()}}</strong> est déjà pris. Veuillez en choisir un autre.
+			</small>
+		</div>
+	}
+</form>

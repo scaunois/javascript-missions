@@ -1,0 +1,33 @@
+<form class="mx-auto shadow"
+			[formGroup]="form"
+			(ngSubmit)="onSubmit()">
+	<div class="mb-3">
+		<label for="username" class="form-label">Nom d'utilisateur</label>
+		<input class="form-control" id="username" formControlName="username"/>
+	</div>
+	<div class="mb-3">
+		<label for="password" class="form-label">Mot de passe</label>
+		<input type="password" class="form-control" id="password" formControlName="password">
+	</div>
+	<div class="mb-3">
+		<button type="submit" class="btn btn-primary d-flex mx-auto" [disabled]="form.invalid">
+			<span>Connexion</span>
+			@if (loading()) {
+				<span class="spinner-border spinner-border-sm ms-2" style="width: 24px; height: 24px;"></span>
+			} @else {
+				<span class="ms-2"><svg lucideLogIn /></span>
+			}
+		</button>
+	</div>
+	@if (hasAuthenticationError()) {
+		<div class="text-center">
+			<small class="text-danger">Erreur d'authentification. Vérifiez vos identifiants.</small>
+		</div>
+	}
+	<div class="text-center">
+		<span class="me-1">Pas inscrit ?</span>
+		<a class="btn btn-link p-0 text-decoration-none align-baseline" routerLink="/signup">
+			Créez un compte
+		</a>
+	</div>
+</form>

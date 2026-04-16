@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import {Component, inject} from '@angular/core';
 import { MenuTileComponent } from './menu-tile/menu-tile.component';
+import {AuthenticationService} from "../shared/user/authentication.service";
+import {SignInComponent} from "../sign-in/sign-in.component";
 
 @Component({
 	selector: 'app-home',
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.css'],
 	imports: [
-		RouterLink,
-		MenuTileComponent
+		MenuTileComponent,
+		SignInComponent
 	],
 	standalone: true
 })
 export class HomeComponent {
+	authenticationService = inject(AuthenticationService);
 
 	readonly menus = [
 		{
@@ -33,5 +35,7 @@ export class HomeComponent {
 			url: "/aventure",
 		}
 	];
+
+	isAuthenticated = this.authenticationService.isAuthenticated;
 
 }

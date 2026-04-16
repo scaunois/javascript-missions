@@ -13,8 +13,12 @@
 	Alors, prêt à relever le défi et à devenir un pro du Javascript ? Let's go ! 🚀
 </p>
 
-<div class="row">
-	@for (menu of menus; track $index) {
-		<app-menu-tile class="col-4 d-flex" [menu]="menu" />
-	}
-</div>
+@if (isAuthenticated()) {
+	<div class="row">
+		@for (menu of menus; track $index) {
+			<app-menu-tile class="col-4 d-flex" [menu]="menu" />
+		}
+	</div>
+} @else {
+	<app-sign-in />
+}

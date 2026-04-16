@@ -1,7 +1,5 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
-import { FirebaseApp } from '@angular/fire/app';
-import { Database, getDatabase, objectVal, ref } from '@angular/fire/database';
-import { AppInfo } from '../../shared/firebase/firebase-entities.model';
+import {Component, inject, signal} from '@angular/core';
+import {FirebaseService} from "../../shared/firebase/firebase.service";
 
 @Component({
   selector: 'app-application-info',
@@ -11,15 +9,12 @@ import { AppInfo } from '../../shared/firebase/firebase-entities.model';
 	standalone: true,
 })
 export class ApplicationInfoComponent {
-
-	private database: Database;
+	firebaseService = inject(FirebaseService);
 
 	angularVersion = signal('');
 
 	constructor() {
-		this.database = getDatabase(inject(FirebaseApp));
-
-		objectVal<AppInfo>(ref(this.database, 'admin/app-info')).subscribe(appInfo => {
+		this.firebaseService.getAppInfo$().subscribe(appInfo => {
 			this.angularVersion.set(appInfo.angularVersion);
 		})
 	}

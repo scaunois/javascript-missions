@@ -1,0 +1,8 @@
+
+form {
+	width: 30%;
+	border: 1px solid var(--bs-border-color);
+	border-radius: 6px;
+	margin-top: 80px;
+	padding: 20px;
+}

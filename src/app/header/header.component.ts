@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, inject, input, signal} from '@angular/core';
 import { NavComponent } from '../nav/nav.component';
+import {AuthenticationService} from "../shared/user/authentication.service";
+import {LoginStatusComponent} from "../login-status/login-status.component";
 
 @Component({
 	selector: 'app-header',
@@ -7,9 +9,12 @@ import { NavComponent } from '../nav/nav.component';
 	styleUrls: ['./header.component.css'],
 	standalone: true,
 	imports: [
-		NavComponent
+		NavComponent,
+		LoginStatusComponent
 	]
 })
 export class HeaderComponent {
+	authenticationService = inject(AuthenticationService);
 
+	isAuthenticated = this.authenticationService.isAuthenticated;
 }

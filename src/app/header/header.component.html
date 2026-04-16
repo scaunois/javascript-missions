@@ -1,7 +1,14 @@
-<header>
-	<h1>Javascript Missions</h1>
+<header class="py-1">
+	<div class="d-flex justify-content-between">
+		<h1>Javascript Missions</h1>
 
-	<!-- Navigation bar -->
-	<app-nav />
+		<!-- Log-in area (login/logout button + authenticated user) -->
+		<app-login-status/>
+	</div>
+
+	<!-- Navigation bar (displayed only when the user is authenticated, otherwise he will only see the connection screen) -->
+	@if (isAuthenticated()) {
+		<app-nav/>
+	}
 </header>
 
