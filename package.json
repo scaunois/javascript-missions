@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-		"format": "prettier --write \"src/**/*.{ts,html,css,scss,json,md}\""
+    "format": "prettier --write \"src/**/*.{ts,html,css,scss,json,md}\""
   },
   "private": true,
   "dependencies": {
@@ -22,6 +22,7 @@
     "@angular/router": "^21.1.5",
     "@lucide/angular": "^1.8.0",
     "bootstrap": "^5.3.3",
+    "ngx-confetti-explosion": "^3.1.0",
     "ngx-highlightjs": "^10.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"

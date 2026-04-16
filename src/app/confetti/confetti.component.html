@@ -1,0 +1,9 @@
+@if (displayed) {
+	<ngx-confetti-explosion
+		[stageWidth]="windowWidth"
+		[stageHeight]="windowHeigth - confettiSize"
+		[particleCount]="500"
+		[particleSize]="confettiSize"
+		[colors]="confettiColors"
+		[force]="1" />
+}

@@ -1,5 +1,7 @@
 <h1>Niveau 3</h1>
 
+<app-confetti [displayed]="showConfetti()" />
+
 <div class="row">
   <div class="col-12">
     <form [formGroup]="levelForm" (ngSubmit)="validateAnswers()">
